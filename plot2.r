@@ -6,6 +6,6 @@ data$Global_active_power <- as.numeric(data$Global_active_power)
 data$datetime <- strptime(paste(as.Date(data$Date, format = "%d/%m/%Y"), data$Time), "%Y-%m-%d %H:%M:%S")
 data$datetime <- as.POSIXct(data$datetime)
 png("plot2.png",width=480,height=480)
-with(data,plot(Global_active_power ~ datetime, type = "l",
+with(data,plot(datetime,Global_active_power, type = "l",
                ylab = "Global Active Power (kilowatts)", xlab = ""))
 dev.off()
